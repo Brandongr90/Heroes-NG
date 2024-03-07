@@ -1,0 +1,73 @@
+<form [formGroup]="productoFormulario">
+  <div class="form">
+    <label for="nombre">Nombre del permisos</label>
+    <input type="text" id="nombre" pInputText formControlName="nombre" />
+
+    <label for="clave">Clave</label>
+    <input type="text" id="clave" pInputText formControlName="clave" />
+
+    <label for="accion">Accion</label>
+    <div id="accion" class="formgroup-inline">
+      <div>
+        <p-radioButton
+          inputId="create"
+          value="Create"
+          formControlName="accion"
+        ></p-radioButton>
+        <label for="create">Create</label>
+      </div>
+
+      <div class="ml-3">
+        <p-radioButton
+          inputId="update"
+          value="Update"
+          formControlName="accion"
+        ></p-radioButton>
+        <label for="update">Update</label>
+      </div>
+
+      <div class="ml-3">
+        <p-radioButton
+          inputId="delete"
+          value="Delete"
+          formControlName="accion"
+        ></p-radioButton>
+        <label for="delete">Delete</label>
+      </div>
+
+      <div class="ml-3">
+        <p-radioButton
+          inputId="admin"
+          value="Admin"
+          formControlName="accion"
+        ></p-radioButton>
+        <label for="admin">Admin</label>
+      </div>
+
+      <div class="ml-3">
+        <p-radioButton
+          inputId="access"
+          value="Access"
+          formControlName="accion"
+        ></p-radioButton>
+        <label for="access">Access</label>
+      </div>
+    </div>
+
+    <div>
+      <p-button
+        label="Save"
+        [disabled]="!productoFormulario.valid"
+        [text]="true"
+        icon="pi pi-check"
+        (click)="saveProduct()"
+      ></p-button>
+      <p-button
+        label="Cancel"
+        [text]="true"
+        icon="pi pi-times"
+        (click)="hideDialog()"
+      ></p-button>
+    </div>
+  </div>
+</form>

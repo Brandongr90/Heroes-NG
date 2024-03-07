@@ -1,0 +1,26 @@
+<form [formGroup]="productoFormulario">
+    <div class="form">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" pInputText formControlName="nombre" />
+        <label for="descripcion">Descripcion</label>
+        <textarea rows="4" cols="30" type="textarea" id="descripcion" pInputTextarea
+            formControlName="descripcion"></textarea>
+        <label for="categoria">Categoria</label>
+        <p-dropdown formControlName="categoria" [options]="categorias" placeholder="Selecciona"></p-dropdown>
+        <label for="genero">Genero</label>
+        <div id="genero">
+            <p-radioButton inputId="hombre" value="hombre" formControlName="genero"></p-radioButton>
+            <label for="hombre">Hombre</label>
+            <br>
+            <p-radioButton inputId="mujer" value="mujer" formControlName="genero"></p-radioButton>
+            <label for="mujer">Mujer</label>
+        </div>
+        <label for="urlimagen">URL Imagen</label>
+        <input type="text" id="urlimagen" pInputText formControlName="url" />
+        <div>
+            <p-button label="Save" [disabled]="!productoFormulario.valid" [text]="true" icon="pi pi-check"
+                (click)="saveProduct()"></p-button>
+            <p-button label="Cancel" [text]="true" icon="pi pi-times" (click)="hideDialog()"></p-button>
+        </div>
+    </div>
+</form>
